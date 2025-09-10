@@ -11,15 +11,11 @@
 <h1 align="center">Animapi</h1>
 <p align="center">
   <strong>
-    Animapi is a library for free anime streaming websites
+    Animapi adalah library scrapper anime streaming dengan sangat cepat dan mudah digunakan.
   </strong>
 </p>
 
 ---
-
-# Introduction
-
-Animapi adalah library scrapper untuk website anime streaming dengan kecepatan yang sangat cepat dan mudah digunakan.
 
 ## Installation
 
@@ -27,14 +23,37 @@ Animapi adalah library scrapper untuk website anime streaming dengan kecepatan y
 npm i animapi
 ```
 
-<!-- ## Test Speed
+### Usage
 
-Berikut adalah hasil test speed dari library ini.<br/>
-Percobaan Pertama memang akan sedikit lama, tapi percobaan selanjutnya akan lebih cepat, karna disini saya memakai cache.
+```ts
+import { Otakudesu } from "animapi";
 
-![Taberu Speed Test](https://github.com/angga7togk/Taberu/blob/main/test-cache.png?raw=true) -->
+const otakudesu = new Otakudesu();
 
-##  Providers
+/**
+ * @return
+ * {
+ *    hasNext: true
+ *    animes: [...]
+ * }
+ */
+const res = await otakudesu.search({
+  filter: {
+    keyword: "kimetsu",
+  },
+});
+```
+
+## Next Target 🥶
+
+- [Anoboy](https://ww3.anoboy.app/)
+- [Samehadaku](https://samehadaku.care/)
+- [Kuramanime](https://v8.kuramanime.tel/)
+- [Zoronime](https://zoronime.com/)
+- [Anime-indo](https://anime-indo.lol/)
+
+## Provider Supports
+
 <p>
   <a href="https://v1.animasu.top/" target="_blank">
     <img src="https://raw.githubusercontent.com/angga7togk/Animapi/refs/heads/main/.github/images/animasu.png?raw=true" width="30%">
@@ -43,37 +62,3 @@ Percobaan Pertama memang akan sedikit lama, tapi percobaan selanjutnya akan lebi
     <img src="https://raw.githubusercontent.com/angga7togk/Animapi/refs/heads/main/.github/images/otakudesu.png?raw=true" width="30%">
   </a>
 </p>
-
-
-<!-- ## ❔ Usage
-
-### ES6
-
-```ts
-import { animasu } from "yaoi";
-
-animasu
-  .getAnimes({
-    page: 1,
-    search: "naruto",
-    sort: "update",
-  })
-  .then(console.log);
-```
-
-### CommonJS
-
-```js
-const { animasu } = require("yaoi");
-```
-
-## Configuration Environment (ENV)
-
-Environment berikut tidak harus diisi, karna sudah di set default.<br/>
-Ini adalah untuk kebutuhan semisal domain website yang di tuju berubah.
-
-```env
-ANIMASU_BASE_URL=https://website.com
-
-CACHE_TTL=600
-``` -->
