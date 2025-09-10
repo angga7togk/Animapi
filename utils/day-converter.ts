@@ -1,4 +1,14 @@
-const dayMap: Record<string, string> = {
+export type DAY_ID =
+  | "senin"
+  | "selasa"
+  | "rabu"
+  | "kamis"
+  | "jumat"
+  | "sabtu"
+  | "minggu"
+  | "random";
+
+export const dayMap: Record<string, string> = {
   monday: "senin",
   tuesday: "selasa",
   wednesday: "rabu",

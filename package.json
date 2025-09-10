@@ -1,23 +1,31 @@
 {
-  "name": "taberu",
+  "name": "animapi",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run clean && tsc -b &&  npx tsc-alias ",
+    "clean": "tsc -b --clean",
+    "release": "npm run build && npm publish"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
     "@types/cheerio": "^0.22.35",
-    "tsc": "^2.0.4",
+    "esbuild": "^0.25.8",
+    "npx": "^10.2.2",
+    "tsc-alias": "^1.8.16",
     "tsx": "^4.20.3",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
   },
   "dependencies": {
     "axios": "^1.11.0",
-    "cheerio": "^1.1.2"
+    "better-sqlite3": "^12.2.0",
+    "cheerio": "^1.1.2",
+    "dayjs": "^1.11.13",
+    "p-limit": "^7.1.1"
   }
 }

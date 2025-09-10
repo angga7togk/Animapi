@@ -8,46 +8,44 @@
   </a>
 </p>
 
-<h1 align="center">TaberuAPI</h1>
+<h1 align="center">Animapi</h1>
 <p align="center">
   <strong>
-    TaberuAPI is a library for free anime streaming websites
+    Animapi is a library for free anime streaming websites
   </strong>
 </p>
 
 ---
 
-# 🫥 Introduction
+# Introduction
 
-TaberuAPI adalah library scrapper untuk website anime streaming dengan kecepatan yang cepat dan mudah digunakan.
+Animapi adalah library scrapper untuk website anime streaming dengan kecepatan yang sangat cepat dan mudah digunakan.
 
-## 🚀 Test Speed
+## Installation
+
+```bash
+npm i animapi
+```
+
+<!-- ## Test Speed
 
 Berikut adalah hasil test speed dari library ini.<br/>
 Percobaan Pertama memang akan sedikit lama, tapi percobaan selanjutnya akan lebih cepat, karna disini saya memakai cache.
 
-![Taberu Speed Test](https://github.com/angga7togk/Taberu/blob/main/test-cache.png?raw=true)
+![Taberu Speed Test](https://github.com/angga7togk/Taberu/blob/main/test-cache.png?raw=true) -->
 
-## 📝 List Source
+##  Providers
+<p>
+  <a href="https://v1.animasu.top/">
+    <img src="https://raw.githubusercontent.com/angga7togk/Animapi/refs/heads/main/.github/images/animasu.png?raw=true" width="30%">
+  </a>
+  <a href="https://otakudesu.best/">
+    <img src="https://raw.githubusercontent.com/angga7togk/Animapi/refs/heads/main/.github/images/otakudesu.png?raw=true" width="30%">
+  </a>
+</p>
 
-Berikut adalah source atau website yang support di scraping
 
-| Source            | Documentation                                                                           | Status |
-| ----------------- | --------------------------------------------------------------------------------------- | ------ |
-| <b>Animasu</b>    | [Lihat Dokumentasi](https://github.com/angga7togk/Taberu/blob/main/docs/animasu.md) | ✅     |
-| <b>Otakudesu</b>  | -                                                                                       | ⌛     |
-| <b>Zoronime</b>   | -                                                                                       | ⌛     |
-| <b>Kuramanime</b> | -                                                                                       | ⌛     |
-
----
-
-# ⚙️ Installation & Configuration
-
-```bash
-npm i yaoi
-```
-
-## ❔ Usage
+<!-- ## ❔ Usage
 
 ### ES6
 
@@ -78,4 +76,4 @@ Ini adalah untuk kebutuhan semisal domain website yang di tuju berubah.
 ANIMASU_BASE_URL=https://website.com
 
 CACHE_TTL=600
-```
+``` -->
