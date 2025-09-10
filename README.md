@@ -14,6 +14,13 @@
     Animapi adalah library scrapper anime streaming dengan sangat cepat dan mudah digunakan.
   </strong>
 </p>
+<p align="center">
+  <img src="https://img.shields.io/npm/v/animapi" alt="npm version">
+  <img src="https://img.shields.io/npm/dm/animapi" alt="npm download">
+  <img src="https://img.shields.io/npm/l/animapi" alt="npm license">
+  <img src="https://img.shields.io/github/stars/angga7togk/Animapi" alt="github stars">
+</p>
+
 
 ---
 

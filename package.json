@@ -1,16 +1,16 @@
 {
   "name": "animapi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "build": "npm run clean && tsc -b &&  npx tsc-alias ",
     "clean": "tsc -b --clean",
     "release": "npm run build && npm publish"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["animasu", "otakudesu", "animaku", "nonton anime", "anime", "waifu", "apalah gatau"],
+  "author": "Angga7Togk",
   "license": "ISC",
-  "description": "",
+  "description": "Animapi adalah library scrapper anime streaming dengan sangat cepat dan mudah digunakan.",
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.13",
     "@types/cheerio": "^0.22.35",
