@@ -26,7 +26,7 @@ export abstract class Provider {
     this.limit = pLimit(3);
   }
 
-  abstract search(options: SearchOptions): Promise<SearchResult>;
+  abstract search(options?: SearchOptions): Promise<SearchResult>;
   abstract detail(slug: string): Promise<Anime | undefined>;
   abstract genres(): Promise<Genre[]>;
   abstract streams(slug: string): Promise<Stream[]>;

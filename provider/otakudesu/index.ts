@@ -70,6 +70,10 @@ export class Otakudesu extends Provider {
   }
 
   async detail(slug: string): Promise<Anime | undefined> {
+    const a = this.cache.get(`detail-${this.name}-${slug}`);
+    if (a && this.options.cache) {
+      return a;
+    }
     const res = await this.api.get(`${this.baseUrl}/anime/${slug}/`);
     const $ = this.cheerio.load(res.data);
 
@@ -171,7 +175,7 @@ export class Otakudesu extends Provider {
       }
     }
 
-    return {
+    const data = {
       slug,
       title: title || "",
       titleAlt: titleJapan,
@@ -190,9 +194,16 @@ export class Otakudesu extends Provider {
       batches,
       source: this.name,
     };
+    if (this.options.cache) this.cache.set(`detail-${this.name}-${slug}`, data);
+    return data;
   }
 
   async genres(): Promise<Genre[]> {
+    const a = this.cache.get(`genres-${this.name}`);
+    if (a && this.options.cache) {
+      return a;
+    }
+
     const res = await this.api.get(`${this.baseUrl}/genre-list/`);
     const $ = this.cheerio.load(res.data);
     const genres: Genre[] = [];
@@ -210,16 +221,20 @@ export class Otakudesu extends Provider {
         source: this.name,
       });
     });
+    if (this.options.cache) this.cache.set(`genres-${this.name}`, genres);
     return genres;
   }
 
   async streams(slug: string): Promise<Stream[]> {
+    const a = this.cache.get(`streams-${this.name}-${slug}`);
+    if (a && this.options.cache) return a;
+
     const nonce = await getNonceCode(this.api, this.baseUrl);
 
     const res = await this.api.get(`${this.baseUrl}/episode/${slug}/`);
     const $ = this.cheerio.load(res.data);
 
-    return await Promise.all(
+    const streams = await Promise.all(
       $(".mirrorstream ul li a")
         .toArray()
         .map((el) =>
@@ -242,6 +257,11 @@ export class Otakudesu extends Provider {
           })
         )
     );
+
+    if (this.options.cache) {
+      this.cache.set(`streams-${this.name}-${slug}`, streams);
+    }
+    return streams;
   }
 
   private async batches(batchSlug: string): Promise<Batch[]> {

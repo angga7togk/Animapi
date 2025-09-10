@@ -1,1 +1,18 @@
-console.log(atob('PGRpdiBjbGFzcz0icmVzcG9uc2l2ZS1lbWJlZC1zdHJlYW0iPjxpZnJhbWUgc3JjPSJodHRwczovL2Rlc3VzdHJlYW0uaW5mby9kc3RyZWFtL29uZGVzdS92My9pbmRleC5waHA/aWQ9VTNGTVJYVkhZMnBzT0RCVk1rbFBVSEZQV1dnMEwwWnBXa2hYY0cxaVV5OWFaMFJaZEhOdGVVRkNRVDA9IiBXSURUSD0iNDIwIiBIRUlHSFQ9IjM3MCIgYWxsb3dmdWxsc2NyZWVuPSJ0cnVlIiB3ZWJraXRhbGxvd2Z1bGxzY3JlZW49InRydWUiIG1vemFsbG93ZnVsbHNjcmVlbj0idHJ1ZSI+PC9pZnJhbWU+PC9kaXY+'))
+import { Otakudesu } from ".";
+
+const otakudesu = new Otakudesu();
+
+(async () => {
+  /**
+   * @return
+   * {
+   *    hasNext: true
+   *    animes: [...]
+   * }
+   */
+  const res = await otakudesu.search({
+    filter: { keyword: "kimetsu" },
+  });
+
+  console.log(res);
+})();

@@ -106,7 +106,7 @@ export class Animasu extends Provider {
   }
   async detail(slug: string): Promise<Anime | undefined> {
     const a = this.cache.get(`detail-${this.name}-${slug}`);
-    if (a) {
+    if (a && this.options.cache) {
       return a;
     }
 
@@ -263,16 +263,22 @@ export class Animasu extends Provider {
       batches,
       source: this.name,
     };
-    this.cache.set(`detail-${this.name}-${slug}`, data);
+
+    if (this.options.cache) this.cache.set(`detail-${this.name}-${slug}`, data);
     return data;
   }
   async genres(): Promise<Genre[]> {
+    const a = this.cache.get(`genres-${this.name}`);
+    if (a && this.options.cache) {
+      return a;
+    }
+
     const res = await this.api.get(
       `${this.baseUrl}/kumpulan-genre-anime-lengkap/`
     );
     const $ = this.cheerio.load(res.data);
     const genres: Genre[] = [];
-    $(".genrepage a").each((index, el) => {
+    $(".genrepage a").each((_, el) => {
       const name = $(el).text().trim();
       const url = $(el).attr("href") || "";
       const slug = url.split("/")[4] || "";
@@ -282,9 +288,13 @@ export class Animasu extends Provider {
         source: this.name,
       });
     });
+    if (this.options.cache) this.cache.set(`genres-${this.name}`, genres);
     return genres;
   }
   async streams(slug: string): Promise<Stream[]> {
+    const a = this.cache.get(`streams-${this.name}-${slug}`);
+    if (a && this.options.cache) return a;
+
     const streams: Stream[] = [];
     const res = await this.api.get(`${this.baseUrl}/${slug}/`);
     const $ = this.cheerio.load(res.data);
@@ -301,6 +311,10 @@ export class Animasu extends Provider {
         });
       }
     });
+
+    if (this.options.cache) {
+      this.cache.set(`streams-${this.name}-${slug}`, streams);
+    }
     return streams;
   }
 
