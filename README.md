@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/angga7togk">
+  <a href="https://github.com/angga7togk" target="_blank">
     <img src="https://i.pinimg.com/originals/30/dd/0a/30dd0aa01adf2eaef4692801e6ffb6fb.gif" width="50%">
   </a>
 </p>
@@ -36,10 +36,10 @@ Percobaan Pertama memang akan sedikit lama, tapi percobaan selanjutnya akan lebi
 
 ##  Providers
 <p>
-  <a href="https://v1.animasu.top/">
+  <a href="https://v1.animasu.top/" target="_blank">
     <img src="https://raw.githubusercontent.com/angga7togk/Animapi/refs/heads/main/.github/images/animasu.png?raw=true" width="30%">
   </a>
-  <a href="https://otakudesu.best/">
+  <a href="https://otakudesu.best/" target="_blank">
     <img src="https://raw.githubusercontent.com/angga7togk/Animapi/refs/heads/main/.github/images/otakudesu.png?raw=true" width="30%">
   </a>
 </p>
