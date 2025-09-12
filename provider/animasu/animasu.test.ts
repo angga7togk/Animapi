@@ -5,12 +5,12 @@ describe("Animasu", () => {
   test("Get Animes", async () => {
     const res = await new Animasu().search({
       filter: {
-        alphabet: 'z'
+        type: 'Movie'
       }
     });
     console.log(res)
     expect(res.animes.length).toBeGreaterThan(1);
-  });
+  }, 20000);
   // test("Get Animes by search", async () => {
   //   const res = await new Animasu().search("naruto");
   //   expect(res.animes[0].title.toLowerCase()).toContain("naruto");

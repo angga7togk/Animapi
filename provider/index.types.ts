@@ -1,3 +1,4 @@
+import { AnimeType } from "../types";
 import { DAY_ID, dayMap } from "../utils/day-converter";
 
 export type Status = "FINISHED" | "ONGOING" | "UPCOMING" | "UNKNOWN";
@@ -88,7 +89,7 @@ export interface SearchFilter {
   characters?: string[];
   seasons?: string[];
   status?: Status;
-  type?: string;
+  type?: AnimeType;
   day?: DAY_ID;
   alphabet?: string
 }

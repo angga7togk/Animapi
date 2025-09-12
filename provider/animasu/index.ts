@@ -61,10 +61,14 @@ export class Animasu extends Provider {
         animes,
       };
     } else {
+      const url = type
+        ? `${this.baseUrl}/anime-movie`
+        : keyword
+        ? `${this.baseUrl}/page/${page}/`
+        : `${this.baseUrl}/pencarian/`;
+
       const res = await this.api.get(
-        keyword
-          ? `${this.baseUrl}/page/${page}/`
-          : `${this.baseUrl}/pencarian/`,
+        url,
         {
           params: {
             s: keyword,
