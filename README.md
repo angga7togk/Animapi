@@ -57,7 +57,6 @@ const res = await otakudesu.search({
 - [Samehadaku](https://samehadaku.care/)
 - [Kuramanime](https://v8.kuramanime.tel/)
 - [Zoronime](https://zoronime.com/)
-- [Anime-indo](https://anime-indo.lol/)
 
 ## Provider Supports
 
@@ -67,5 +66,8 @@ const res = await otakudesu.search({
   </a>
   <a href="https://otakudesu.best/" target="_blank">
     <img src="https://raw.githubusercontent.com/angga7togk/Animapi/refs/heads/main/.github/images/otakudesu.png?raw=true" width="30%">
+  </a>
+  <a href="https://anime-indo.lol/" target="_blank">
+    <img src="https://raw.githubusercontent.com/angga7togk/Animapi/refs/heads/main/.github/images/anime-indo.png?raw=true" width="30%">
   </a>
 </p>
